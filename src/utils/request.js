@@ -6,13 +6,20 @@ function checkStatus(response) {
   if (response && response.status === 401) {
     redirectLogin();
   }
-  if (response.status >= 200 && response.status < 500) {
+  if (response.status >= 200 && response.status < 300) {
     return response;
   }
 
   const error = new Error(response.statusText);
   error.response = response;
   throw error;
+}
+
+function parseErrorMessage(responseJson) {
+  const { status, message } = responseJson;
+  if ('error' === status) {
+    throw new Error(message);
+  }
 }
 
 /**
@@ -28,16 +35,9 @@ export default async function request(url, options) {
 
   checkStatus(response);
 
-  const data = await response.json();
+  const ret = await response.json();
 
-  const ret = {
-    data,
-    headers: {},
-  };
-
-  if (response.headers.get('x-total-count')) {
-    ret.headers['x-total-count'] = response.headers.get('x-total-count');
-  }
+  parseErrorMessage(ret);
 
   return ret;
 }

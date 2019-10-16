@@ -38,7 +38,7 @@ class UserEditModal extends Component {
   render() {
     const { children } = this.props;
     const { getFieldDecorator } = this.props.form;
-    const { name, email, website } = this.props.record;
+    const { name, email, status } = this.props.record;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
@@ -78,11 +78,11 @@ class UserEditModal extends Component {
             </FormItem>
             <FormItem
               {...formItemLayout}
-              label="Website"
+              label="Status"
             >
               {
-                getFieldDecorator('website', {
-                  initialValue: website,
+                getFieldDecorator('status', {
+                  initialValue: status,
                 })(<Input />)
               }
             </FormItem>

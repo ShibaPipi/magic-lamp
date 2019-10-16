@@ -1,12 +1,11 @@
 export const BASE_URL_PREFIX = '/api/v1';
 
 const config = {
-  domain: 'http://passport.corp.visiondk.com',
-  redirectUrl: 'http://passport.corp.visiondk.com/login?redirect_url=',
-  appName: 'ant_passport',
+  domain: 'http://localhost:8000/',
+  appName: 'magic-lamp',
   appVision: '0.1',
-  appAuthor: 'tkvern',
-  email: 'verncake@gmail.com',
+  appAuthor: 'Shibapipi',
+  email: 'syp906262260@gmail.com',
 };
 
 export default config;

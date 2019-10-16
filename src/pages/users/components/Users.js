@@ -47,9 +47,14 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       key: 'email',
     },
     {
-      title: 'Website',
-      dataIndex: 'website',
-      key: 'website',
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+    },
+    {
+      title: 'Created-Time',
+      dataIndex: 'created_at',
+      key: 'created_at',
     },
     {
       title: 'Operation',
