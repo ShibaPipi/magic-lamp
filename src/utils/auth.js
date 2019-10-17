@@ -6,7 +6,7 @@ export function getAuthHeader(sso_token) {
   return ({
     headers: {
       'Accept': 'application/json',
-      'Authorization': 'Bearer ' + sso_token,
+      'Authorization': sso_token,
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
     },

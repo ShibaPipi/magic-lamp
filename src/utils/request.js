@@ -1,25 +1,17 @@
 import fetch from 'dva/fetch';
 import { getAuthHeader, redirectLogin } from './auth';
-import { getCookie } from './helper';
 
-function checkStatus(response) {
-  if (response && response.status === 401) {
+function checkStatus(responseJson) {
+  if (401 === responseJson.code) {
     redirectLogin();
   }
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  }
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
-}
-
-function parseErrorMessage(responseJson) {
   const { status, message } = responseJson;
   if ('error' === status) {
     throw new Error(message);
   }
+
+  return responseJson;
 }
 
 /**
@@ -30,14 +22,11 @@ function parseErrorMessage(responseJson) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(url, options) {
-  const authHeader = getAuthHeader(getCookie('sso_token'));
+  const authHeader = getAuthHeader(localStorage.getItem('jwToken'));
   const response = await fetch(url, { ...options, ...authHeader });
-
-  checkStatus(response);
-
   const ret = await response.json();
 
-  parseErrorMessage(ret);
+  checkStatus(ret);
 
   return ret;
 }
