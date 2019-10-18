@@ -1,24 +1,21 @@
 import { connect } from 'dva';
-import { LoginWrapper, LoginBox, Input, Button } from "./style";
+import styles from './style.less';
 import { Redirect } from "react-router-dom";
+import LoginForm from './LoginForm';
 
 function Login({ dispatch, loginState }) {
   function loginHandler(values) {
     dispatch({
-      type: 'login/index',
+      type: 'token/get',
       payload: values
     })
   }
 
   if (!loginState) {
     return (
-      <LoginWrapper>
-        <LoginBox>
-          <Input placeholder="账号" />
-          <Input type="password" placeholder="密码" />
-          <Button onClick={loginHandler}>登录</Button>
-        </LoginBox>
-      </LoginWrapper>
+      <div className={styles.loginWrapper}>
+        <LoginForm onClick={loginHandler} />
+      </div>
     );
   } else {
     return <Redirect to="/" />
@@ -26,7 +23,7 @@ function Login({ dispatch, loginState }) {
 }
 
 function mapStateToProps(state) {
-  const { loginState } = state.login;
+  const { loginState } = state.token;
 
   return {
     loginState

@@ -19,17 +19,14 @@ export function redirectLogin() {
 }
 
 export function authenticated() {
-  const sso_token = getCookie('sso_token');
-  if (!sso_token) {
-    redirectLogin();
-  }
+  !getCookie('sso_token') && redirectLogin();
 }
 
 export function logOut() {
   delCookie({
     name: 'sso_token',
     path: '/',
-    domain: '.corp.visiondk.com',
+    domain: config.domain,
   });
   authenticated();
 }

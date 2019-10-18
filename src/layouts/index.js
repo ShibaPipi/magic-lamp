@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.css';
+import styles from '../style/common.less';
 import Header from './Header';
 import withRouter from 'umi/withRouter';
 

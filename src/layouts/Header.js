@@ -14,6 +14,9 @@ function Header({ location }) {
       <Menu.Item key="/users">
         <Link to="/users"><Icon type="bars" />Users</Link>
       </Menu.Item>
+      <Menu.Item key="/login">
+        <Link to="/login">Login</Link>
+      </Menu.Item>
       <Menu.Item key="/umi">
         <a href="https://github.com/umijs/umi" target="_blank">umi</a>
       </Menu.Item>

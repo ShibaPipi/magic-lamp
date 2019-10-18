@@ -4,7 +4,7 @@ const config = {
   domain: 'http://localhost:8000/',
   appName: 'magic-lamp',
   appVision: '0.1',
-  appAuthor: 'Shibapipi',
+  appAuthor: 'DogePIPI',
   email: 'syp906262260@gmail.com',
 };
 
