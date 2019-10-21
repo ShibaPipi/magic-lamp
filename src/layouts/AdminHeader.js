@@ -1,7 +1,7 @@
 import { Menu, Icon } from 'antd';
 import Link from 'umi/link';
 
-function Header({ location }) {
+function AdminHeader({ location }) {
   return (
     <Menu
       selectedKeys={[location.pathname]}
@@ -24,10 +24,10 @@ function Header({ location }) {
         <a href="https://github.com/dvajs/dva" target="_blank">dva</a>
       </Menu.Item>
       <Menu.Item key="/404">
-        <Link to="/page-you-dont-know"><Icon type="frown-circle" />404</Link>
+        <Link to="/page-you-dont-know"><Icon type="frown" />404</Link>
       </Menu.Item>
     </Menu>
   );
 }
 
-export default Header;
+export default AdminHeader;
