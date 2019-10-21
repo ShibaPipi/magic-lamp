@@ -18,7 +18,7 @@ function Login({ dispatch, loginState }) {
       </div>
     );
   } else {
-    return <Redirect to="/" />
+    return <Redirect to='/' />
   }
 }
 

@@ -2,6 +2,7 @@ import { Menu, Icon } from 'antd';
 import Link from 'umi/link';
 
 function AdminHeader({ location }) {
+  console.log(location)
   return (
     <Menu
       selectedKeys={[location.pathname]}

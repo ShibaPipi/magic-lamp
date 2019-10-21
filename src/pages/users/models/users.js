@@ -14,7 +14,6 @@ export default {
   },
   effects: {
     * fetch({ payload: { page = 1 } }, { call, put }) {
-      try {
         const { data, meta: { total } } = yield call(usersService.fetch, { page });
         yield put({
           type: 'save',
@@ -24,9 +23,6 @@ export default {
             page: parseInt(page, 10),
           },
         });
-      } catch (e) {
-        console.log(e.message)
-      }
     },
     * patch({ payload: { id, values } }, { call, put, select }) {
       yield call(usersService.patch, id, values);
