@@ -26,6 +26,14 @@ function Menu({ location }) {
       <MenuItem className={styles.navItem} key="/404">
         <Link to="/page-you-dont-know"><Icon type="frown" />404</Link>
       </MenuItem>
+      <MenuItem className={styles.navItem}>
+        <Link to="/write">
+            <Icon type="highlight" />写文章
+        </Link>
+      </MenuItem>
+      <MenuItem className={styles.navItem}>
+        注册
+      </MenuItem>
       <MenuItem>
         <Search />
       </MenuItem>

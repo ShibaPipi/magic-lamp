@@ -7,10 +7,12 @@ const Header = ({ location }) => {
   return (
     <div className={styles.headerWrapper}>
       <Link to='/'>
-        <div className={styles.logo} />
+        <div className={styles.logo}>
+          <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
+        </div>
       </Link>
       <Nav location={location}/>
-      <Addition />
+      {/*<Addition />*/}
     </div>
   );
 };
