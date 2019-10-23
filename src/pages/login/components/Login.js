@@ -3,7 +3,7 @@ import styles from './style.less';
 import { Redirect } from "react-router-dom";
 import LoginForm from './LoginForm';
 
-function Login({ dispatch, loginState }) {
+function Login({ dispatch }) {
   function loginHandler(values) {
     dispatch({
       type: 'token/get',
@@ -11,7 +11,7 @@ function Login({ dispatch, loginState }) {
     })
   }
 
-  if (!loginState) {
+  if ('true' !== localStorage.getItem('loginState')) {
     return (
       <div className={styles.loginWrapper}>
         <LoginForm onClick={loginHandler} />
@@ -22,12 +22,4 @@ function Login({ dispatch, loginState }) {
   }
 }
 
-function mapStateToProps(state) {
-  const { loginState } = state.token;
-
-  return {
-    loginState
-  }
-}
-
-export default connect(mapStateToProps)(Login);
+export default connect()(Login);

@@ -1,13 +1,11 @@
 import * as loginService from '../pages/login/services/login';
+import { routerRedux } from "dva/router";
 
 export default {
 
   namespace: 'token',
 
-  state: {
-    loginState: false,
-    token: null
-  },
+  state: {},
 
   subscriptions: {
     setup({ dispatch, history }) {
@@ -19,12 +17,11 @@ export default {
       yield put({ type: 'save' });
     },
     * get({ payload: values }, { call, put }) {
-      try {
-        const { data: token } = yield call(loginService.getToken, values);
-        yield put({ type: 'save', payload: { loginState: true, token } })
-      } catch (e) {
-        console.log(e)
-      }
+      const { data: { token } } = yield call(loginService.getToken, values);
+      // console.log(token)
+      localStorage.setItem('loginState', true);
+      localStorage.setItem('token', token);
+      yield put(routerRedux.push('/'));
     },
   },
 

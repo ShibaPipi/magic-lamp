@@ -1,16 +1,14 @@
 import { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import styles from './style.less';
+import Link from "umi/link";
 
 class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const {onClick, form} = this.props;
     form.validateFields((err, values) => {
-      if (!err) {
-        onClick(values);
-        console.log('Received values of form: ', values);
-      }
+      !err && onClick(values);
     });
   };
 
@@ -20,22 +18,22 @@ class LoginForm extends Component {
       <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
         <Form.Item>
           {getFieldDecorator('name', {
-            rules: [{ required: true, message: 'Please input your name!' }],
+            rules: [{ required: true, message: '请输入用户名' }],
           })(
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0, 0, 0, .25)' }} />}
-              placeholder="Name"
+              placeholder="用户名"
             />,
           )}
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
+            rules: [{ required: true, message: '请输入密码' }],
           })(
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0, 0, 0, .25)' }} />}
               type="password"
-              placeholder="Password"
+              placeholder="密码"
             />,
           )}
         </Form.Item>
@@ -43,14 +41,14 @@ class LoginForm extends Component {
           {getFieldDecorator('remember', {
             valuePropName: 'checked',
             initialValue: true,
-          })(<Checkbox>Remember me</Checkbox>)}
-          <a className={styles.loginFormForgot} href="">
-            Forgot password
-          </a>
+          })(<Checkbox>记住我</Checkbox>)}
+          <Link className={styles.loginFormForgot} to="/">
+            忘记密码
+          </Link>
           <Button type="primary" htmlType="submit" className={styles.loginFormButton}>
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          或者&nbsp;<a href="">立即注册</a>
         </Form.Item>
       </Form>
     );
