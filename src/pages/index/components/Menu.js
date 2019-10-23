@@ -1,24 +1,20 @@
-import { Menu as AntdMenu, Icon } from 'antd';
+import { Row, Col, Icon } from 'antd';
 import Link from 'umi/link';
+import styles from '../index.less';
 
-const MenuItem = AntdMenu.Item;
-
-function Menu({ location }) {
+function Menu() {
   return (
-    <AntdMenu
-      selectedKeys={[location.pathname]}
-      mode="horizontal"
-    >
-      <MenuItem key="/">
-        <Link to="/"><Icon type="home" />首页</Link>
-      </MenuItem>
-      <MenuItem key="/users">
-        <Link to="/users"><Icon type="user" />粉丝</Link>
-      </MenuItem>
-      <MenuItem key="/posts">
-        <Link to="/posts"><Icon type="read" />发现</Link>
-      </MenuItem>
-    </AntdMenu>
+    <Row  className={styles.menu} type="flex" justify="center">
+      <Col className={styles.menuItem} key="/">
+        <Link to="/"><Icon className={styles.icon} type="home" />首页</Link>
+      </Col>
+      <Col className={styles.menuItem} key="/users">
+        <Link to="/users"><Icon className={styles.icon} type="user" />粉丝</Link>
+      </Col>
+      <Col className={styles.menuItem} key="/posts">
+        <Link to="/posts"><Icon className={styles.icon} type="read" />发现</Link>
+      </Col>
+    </Row>
   );
 }
 

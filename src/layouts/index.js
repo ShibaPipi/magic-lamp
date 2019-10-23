@@ -6,14 +6,15 @@ import withRouter from 'umi/withRouter';
 
 function Layout({ children, location }) {
   return (
-    <div className={styles.normal}>
+    <div>
       <Header location={location} />
       {/*<AdminHeader location={location} />*/}
-      <div className={styles.content}>
-        <div className={styles.main}>
+      <div className={styles.container}>
           {children}
-        </div>
       </div>
+      <footer className={styles.footer}>
+        footer
+      </footer>
     </div>
   );
 }

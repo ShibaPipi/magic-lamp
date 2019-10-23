@@ -5,12 +5,7 @@ import styles from './style.less';
 
 const Header = ({ location }) => {
   return (
-    <div className={styles.headerWrapper}>
-      <Link to='/'>
-        <div className={styles.logo}>
-          <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
-        </div>
-      </Link>
+    <div className={`${styles.headerWrapper}`}>
       <Nav location={location}/>
       {/*<Addition />*/}
     </div>

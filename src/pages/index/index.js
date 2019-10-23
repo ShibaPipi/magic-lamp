@@ -1,45 +1,69 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Typography, Carousel } from 'antd';
+import { Row, Col, Carousel, Card, Icon, Avatar } from 'antd';
 import Menu from './components/Menu'
 import styles from './index.less';
 
-const { Title } = Typography;
+const { Meta } = Card;
 
-function IndexPage({ location }) {
-  // return (
-  //   <div className={styles.normal}>
-  //     <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-  //     <div className={styles.welcome} />
-  //     <ul className={styles.list}>
-  //       <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-  //       <li><a href="https://github.com/dvajs/dva">Getting Started</a></li>
-  //     </ul>
-  //   </div>
-  // );
+function IndexPage() {
   return (
-    <div>
-      <div>
-        <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
-        <Title>Doge Blog</Title>
-        <Menu location={location} />
-      </div>
-      <div>
-        <Carousel autoplay>
-          <div className={styles.slickSlide}>
-            <h3>1</h3>
-          </div>
-          <div className={styles.slickSlide}>
-            <h3>2</h3>
-          </div>
-        </Carousel>
-        <div>banner</div>
-        <div>
-          <div>posts</div>
-          <div>recommends</div>
+    <Row>
+      <Row className={styles.title} gutter={[16, 16]} type="flex" justify="center" align="middle">
+        <Col>
+          <img className={styles.logo} src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
+        </Col>
+        <Col>
+          <div>Doge Blog</div>
+        </Col>
+      </Row>
+      <Menu />
+      <Carousel style={{ marginBottom: '70px' }} autoplay>
+        <div className={styles.slickSlide}>
+          <h3>1</h3>
         </div>
-      </div>
-    </div>
+        <div className={styles.slickSlide}>
+          <h3>2</h3>
+        </div>
+        <div className={styles.slickSlide}>
+          <h3>3</h3>
+        </div>
+        <div className={styles.slickSlide}>
+          <h3>4</h3>
+        </div>
+      </Carousel>
+      <Row type="flex" justify="center">
+        <Col className={`${styles.leftContent} ${styles.col}`} span={12}>
+          <Card
+            hoverable
+            cover={<img alt="example" src="https://www.17sucai.com/preview/1324218/2018-08-10/3133/images/blog/2.jpg" />}
+          >
+            <Meta title="Europe Street beat" description="www.instagram.com" />
+          </Card>
+        </Col>
+        <Col className={`${styles.rightContent} ${styles.col}`} span={6}>
+          <Card
+            cover={
+              <img
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+            }
+            actions={[
+              <Icon type="setting" key="setting" />,
+              <Icon type="edit" key="edit" />,
+              <Icon type="ellipsis" key="ellipsis" />,
+            ]}
+          >
+            <Meta
+              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+              title="Card title"
+              description="This is the description"
+            />
+          </Card>
+        </Col>
+      </Row>
+    </Row>
   );
 }
 

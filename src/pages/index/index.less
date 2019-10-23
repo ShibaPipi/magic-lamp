@@ -1,5 +1,7 @@
 @import "../../style/common";
 
+@menu-margin: 10px;
+
 .normal {
   font-family: Georgia, sans-serif;
   margin-top: 3em;
@@ -7,36 +9,62 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  height: 150px;
+  font-size: @fontA;
   font-weight: normal;
-  letter-spacing: -1px;
 }
 
-.welcome {
-  height: 328px;
-  background: url(../../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
+.logo {
+  height: 50px;
+  line-height: 50px;
 }
 
-.list {
-  font-size: 1.2em;
-  margin-top: 1.8em;
-  list-style: none;
-  line-height: 1.5em;
-}
+.menu {
+  margin-bottom: 40px;
 
-.list code {
-  background: #f7f7f7;
+  .menuItem {
+    padding: 0 0 15px 0;
+    margin: 0 20px;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
 }
 
 .slickSlide {
   text-align: center;
-  height: 160px;
-  line-height: 160px;
+  height: 360px;
+  line-height: 360px;
   background: #364d79;
   overflow: hidden;
 
   h3 {
     color: #fff;
   }
+}
+
+.col {
+  margin-right: 15px;
+  margin-left: 15px;
+  background: @colorM;
+  color: @colorC;
+}
+
+.leftContent {
+  //padding-right: 15px;
+  //padding-left: 15px;
+}
+
+.rightContent {
+  //padding-right: 15px;
+  //padding-left: 15px;
 }
