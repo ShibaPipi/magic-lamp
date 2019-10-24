@@ -1,10 +1,12 @@
 import { Row, Col, Icon } from 'antd';
 import Link from 'umi/link';
 import styles from '../index.less';
+import React from "react";
 
-function Menu() {
+function Menu({ menuAffixed }) {
   return (
-    <Row  className={styles.menu} type="flex" justify="center">
+    // className={menuAffixed ? styles.affix : ''}
+  <Row  className={`${styles.menu} ${menuAffixed ? styles.affix : ''}`} type="flex" justify="center" align="middle">
       <Col className={styles.menuItem} key="/">
         <Link to="/"><Icon className={styles.icon} type="home" />首页</Link>
       </Col>

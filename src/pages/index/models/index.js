@@ -4,6 +4,7 @@ export default {
   namespace: 'index',
 
   state: {
+    menuAffixed: false,
     list: [],
     total: null,
     page: null,
@@ -30,10 +31,14 @@ export default {
       });
     },
   },
+
   reducers: {
     save(state, { payload: { data: list, total, page } }) {
       return { ...state, list, total, page };
     },
+    changeMenuAffixed(state) {
+      return { ...state, menuAffixed: !state.menuAffixed }
+    }
   },
 
 };
