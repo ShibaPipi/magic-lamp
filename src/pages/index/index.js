@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'dva';
 import Link from "umi/link";
 import { Row, Col, Affix, Carousel, Card, Icon, Avatar, BackTop } from 'antd';
