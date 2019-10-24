@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import styles from './style.less';
+import styles from '../login.less';
 import Link from "umi/link";
 
 class LoginForm extends Component {
