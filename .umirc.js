@@ -20,7 +20,7 @@ export default {
         { path: '/', component: '../../src/pages/index' },
         { path: '/users', component: '../../src/pages/users' },
         { path: '/login', component: '../../src/pages/login' },
-        // { path: '/posts', component: '../../src/pages/posts' },
+        { path: '/posts/:id', component: '../../src/pages/posts/$id' },
       ],
     },
   ],

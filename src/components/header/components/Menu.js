@@ -34,6 +34,9 @@ function Menu({ location }) {
       <MenuItem className={styles.navItem}>
         注册
       </MenuItem>
+      <MenuItem className={styles.navItem}>
+        <Link to='/login'>登录</Link>
+      </MenuItem>
       <MenuItem>
         <Search />
       </MenuItem>

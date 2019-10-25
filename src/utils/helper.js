@@ -16,3 +16,7 @@ export function delCookie({ name, domain, path }) {
       domain;
   }
 }
+
+export function getUrlLastParam(pathname) {
+  return pathname.substring(pathname.lastIndexOf('/') + 1, pathname.length);
+}
