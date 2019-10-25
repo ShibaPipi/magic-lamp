@@ -7,7 +7,7 @@ import styles from './index.less';
 const { Meta } = Card;
 
 function Index({dispatch, list, menuAffixed}) {
-  function menuAffixedHandler() {
+  function toggleMenuAffixed() {
     dispatch({
       type: 'index/changeMenuAffixed'
     })
@@ -17,7 +17,11 @@ function Index({dispatch, list, menuAffixed}) {
     <Row>
       <Row className={styles.title} gutter={[16, 16]} type="flex" justify="center" align="middle">
         <Col>
-          <img className={styles.logo} src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
+          <img
+            className={styles.logo}
+            src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+            alt=""
+          />
         </Col>
         <Col>
           <div>Doge Blog</div>
@@ -25,7 +29,7 @@ function Index({dispatch, list, menuAffixed}) {
       </Row>
       <Affix
         offsetTop={0}
-        onChange={menuAffixedHandler}
+        onChange={toggleMenuAffixed}
       >
         <Menu menuAffixed={menuAffixed} />
       </Affix>
@@ -52,7 +56,7 @@ function Index({dispatch, list, menuAffixed}) {
           {list.map((item, index) => {
             if (index < 4) {
               return (
-                <Link to='' key={index}>
+                <Link to={`/posts/${item.id}`} key={index}>
                   <Card
                     className={styles.postCard}
                     hoverable
