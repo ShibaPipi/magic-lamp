@@ -21,6 +21,8 @@ export default {
         { path: '/users', component: '../../src/pages/users' },
         { path: '/login', component: '../../src/pages/login' },
         { path: '/posts/:id', component: '../../src/pages/posts/$id' },
+        { path: '/purchases', component: '../../src/pages/purchases' },
+        { path: '/shipments', component: '../../src/pages/shipments' },
       ],
     },
   ],
