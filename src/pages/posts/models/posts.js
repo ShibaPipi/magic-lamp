@@ -26,12 +26,14 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {
-      return history.listen(({ pathname }) => {
-        if (-1 !== pathname.indexOf('posts/')) {
-          dispatch({
-            type: 'fetch', payload: getUrlLastParam(pathname)
-          })
-        }
+      return history.listen((location) => {
+        // console.log(location)
+        // if (-1 !== pathname.indexOf('posts/')) {
+        //   console.log()
+          // dispatch({
+          //   type: 'fetch', payload: getUrlLastParam(pathname)
+          // })
+        // }
       })
     },
   },

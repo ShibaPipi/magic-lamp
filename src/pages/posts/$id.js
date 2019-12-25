@@ -1,14 +1,18 @@
+import React, { Component } from 'react';
 import { connect } from "dva";
-import {Card} from 'antd';
+import { Card } from 'antd';
 
-function Posts({ dispatch, data }) {
-  return (
-<div>
-  <Card title={data.title}>
-    <p dangerouslySetInnerHTML={{ __html: data.content }} />
-  </Card>
-</div>
-);
+class Posts extends Component {
+  render() {
+    console.log(this.props.match)
+    return (
+      <div>
+        <Card title={this.props.data.title}>
+          <p dangerouslySetInnerHTML={{ __html: this.props.data.content }}/>
+        </Card>
+      </div>
+    )
+  };
 }
 
 export default connect((state) => {
