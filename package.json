@@ -11,11 +11,11 @@
     "dva": "^2.4.1",
     "react-transition-group": "^2.9.0",
     "reset-css": "^5.0.0",
-    "umi": "^1.0.0",
+    "umi": "^4.5.3",
     "umi-plugin-dva": "^0.7.1"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
+    "eslint": "^9.39.1",
     "eslint-config-umi": "^0.1.1",
     "eslint-plugin-flowtype": "^2.34.1",
     "eslint-plugin-import": "^2.6.0",
