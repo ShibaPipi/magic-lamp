@@ -11,7 +11,7 @@
     "dva": "^2.4.1",
     "react-transition-group": "^2.9.0",
     "reset-css": "^5.0.0",
-    "umi": "^1.0.0",
+    "umi": "^4.6.23",
     "umi-plugin-dva": "^0.7.1"
   },
   "devDependencies": {
